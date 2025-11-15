@@ -8,6 +8,7 @@ import { RadioGroup } from 'src/ui/radio-group';
 import { Separator } from 'src/ui/separator';
 import { Text } from 'src/ui/text';
 import {
+	defaultArticleState,
 	ArticleStateType,
 	backgroundColors,
 	contentWidthArr,
@@ -38,17 +39,15 @@ export const ArticleParamsForm = ({
 	};
 
 	const handleReset = () => {
-		setFormState(articleState);
-		setArticleState(articleState);
+		setFormState(defaultArticleState);
+		setArticleState(defaultArticleState);
 	};
 
 	useEffect(() => {
+		if (!isOpen) return;
+
 		const clickOutsideForm = (event: MouseEvent) => {
-			if (
-				isOpen &&
-				sideBar.current &&
-				!sideBar.current.contains(event.target as Node)
-			) {
+			if (sideBar.current && !sideBar.current.contains(event.target as Node)) {
 				setIsOpen(false);
 			}
 		};
