@@ -16,6 +16,7 @@
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
+	gap: 50px;
 	box-sizing: border-box;
 	width: 616px;
 	height: auto;
@@ -25,8 +26,15 @@
 	border-right: 1px solid #000000;
 }
 
+.formContent {
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+}
+
 .bottomContainer {
 	display: flex;
 	justify-content: space-between;
 	margin-top: auto;
+	margin-top: 207px;
 }
